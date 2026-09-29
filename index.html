@@ -1,36 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Your site description goes here.">
-  <meta name="author" content="Your Name">
-  <title>My Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaron Janit's Personal Site</title>
+<style>
 
-  <link rel="stylesheet" href="style.css">
+/* css reset stuff we learned */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef1f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* center the content so its not stuck to the left */
+main {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+header {
+  background-color: white;
+  border-bottom: 2px solid navy;
+  padding: 15px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 34px;
+  color: navy;
+  margin-bottom: 8px;
+}
+
+/* my first nav bar!! */
+nav a {
+  color: navy;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+nav a:hover {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+section {
+  background-color: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 2px 2px 6px #aaaaaa;
+}
+
+h2 {
+  color: #26619c;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #cfe2f3;
+  padding-bottom: 4px;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;  /* circle picture */
+  display: block;
+  margin: 15px auto;
+  border: 4px solid #cfe2f3;
+}
+
+/* flexbox!! took me forever to understand this */
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hobby {
+  background-color: #e8f2fc;
+  border: 2px solid #7fb5dd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  flex: 1 1 150px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.hobby:hover {
+  transform: scale(1.05);  /* they pop out a little */
+}
+
+/* button for the javascript section */
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.button:hover {
+  background-color: darkgreen;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #555555;
+  font-size: 13px;
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>My Site</h1>
-      <nav>
-        <!-- Navigation links go here -->
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <div class="container">
-      <!-- Main page content goes here -->
-    </div>
-  </main>
+<header>
+  <h1>Aaron Janit's Website</h1>
+  <nav>
+    <a href="#about">About</a> |
+    <a href="#hobbies">Hobbies</a> |
+    <a href="#school">School</a> |
+    <a href="#future">Future</a> |
+    <a href="#js">My First JS</a> |
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 My Site. All rights reserved.</p>
-    </div>
-  </footer>
+<main>
 
-  <script src="script.js"></script>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi my name is Aaron Janit. I am in highschool. This is my second website, the first one
+    was just plain text on a white page with a red box somewhere. I have been learning HTML
+    and CSS in computer class for about a year now. I like computers and basketball and other
+    stuff too.</p>
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocIbd0wxUEI1cPOOW282qJB0wZTgtNljmKmI8qlNAVuMau_O9M4H=s83-c-mo" alt="picture of me">
+  </section>
+
+<section id="hobbies">
+  <h2>My Hobbies</h2>
+  <div class="hobbies">
+    <div class="hobby">Computers</div>
+    <div class="hobby">Basketball</div>
+    <div class="hobby">Video games</div>
+    <div class="hobby">Making websites</div>
+  </div>
+</section>
+
+<section id="school">
+  <h2>My Favorite Subject</h2>
+  <p>My favorite subject is computer class because we get to make websites like this one.
+  My teacher taught us how to use tags and flexbox and stuff. w3schools also helps</p>
+</section>
+
+<section id="future">
+  <h2>My Plans for the Future</h2>
+  <p>Someday I want to make a really good website. This one has a nav bar and the floating
+  hobby cards now which I think is pretty good for my age but I will keep getting better at it.
+  We just started JavaScript so mabey I will add more of that too.</p>
+</section>
+
+<section id="js">
+  <h2>My First JavaScript!!</h2>
+  <p>We just started JavaScript this week. Here is my very first program, a click counter.</p>
+  <button class="button" onclick="clickMe()">Click me!!</button>
+  <p id="clicked">You clicked the button 0 times</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>if you are on this site then i dont think i want you contacting me</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Made by Aaron Janit in computer class. Thanks for visiting!!</p>
+  <p>Last updated 9/29/26</p>
+</footer>
+
+<script>
+console.log("hi person reading the console");
+
+var clicks = 0;
+
+function clickMe() {
+  clicks = clicks + 1;  // make the number go up
+  document.getElementById("clicked").innerHTML = "You clicked the button " + clicks + " times";
+}
+</script>
+
 </body>
 </html>
